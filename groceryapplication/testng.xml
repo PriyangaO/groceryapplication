@@ -1,0 +1,9 @@
+<suite name= "my test suite"> 
+<parameter name= "browser" value="Chrome">
+</parameter>
+<test name="grouptest">
+<classes>  
+<class name= "testscripts.ManageNewsTest"></class>
+</classes>
+</test>
+</suite>
