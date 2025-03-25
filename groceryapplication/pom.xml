@@ -1,7 +1,7 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-   <groupId>com.obsqura</groupId>
-  <artifactId>My_Maven</artifactId>
+   <groupId>groceryapplication</groupId>
+  <artifactId>groceryapplication</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  <dependencies>
  <dependency>
@@ -46,7 +46,7 @@
 </dependencies>
 <build>
 		<plugins>
-			<plugin>
+		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.13.0</version>
@@ -66,7 +66,10 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+	</build>
+
+
+
 </project>
 
 
