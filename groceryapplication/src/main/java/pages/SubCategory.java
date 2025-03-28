@@ -34,10 +34,6 @@ public SubCategory  clickOnNew()
 public SubCategory clickOnCategory()
 {
 	pageutility.selectDropdownWithVisibleText(category,"veggies");
-//	 Select select = new Select(category);
-//	 select.selectByIndex(1);
-//	 WebElement selectedelement=select.getFirstSelectedOption();
-//	 selectedelement.click();	
 	return this;
 }
 public SubCategory clickOnSubCategory()

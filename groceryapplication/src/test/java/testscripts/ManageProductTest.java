@@ -13,27 +13,21 @@ import pages.LoginPage;
 import pages.ManageProduct;
 
 public class ManageProductTest extends BaseClass {
-	
+	LoginPage login; 
+	HomePage home;
+	ManageProduct pro;
   @Test
   public void verifyToAddManageProduct()
   {
 	    LoginPage login= new LoginPage(driver);
-		login.enterUserNameOnUserName("admin");
-		login.enterPasswordOnPasswordField("admin");
-		login.clickOnLoginButton();
+	home=login.enterUserNameOnUserName("admin")
+		.enterPasswordOnPasswordField("admin").clickOnLoginButton();
+		
 		HomePage home= new HomePage(driver);
-        home.clickOnManageProduct();
+   pro= home.clickOnManageProduct().clickOnNew().clickOnTitle().clickOnProduct().clickOnTag()
+		   .clickOnPriceType().clickOnLiterValue().clickOnLitreUnit().clickOnLitrePrice().clickOnStockAvailablity().clickOnCreate();
         ManageProduct product=new ManageProduct (driver);
-        product.clickOnNew();
-        product.clickOnTitle();
-        product.clickOnProduct();
-        product.clickOnTag();
-        product.clickOnPriceType();
-        product.clickOnLiterValue();
-        product.clickOnLitreUnit();
-        product.clickOnLitrePrice();
-        product.clickOnStockAvailablity();
-        product.clickOnCreate();
+       
         boolean isalertpresent= product.isAlertShown();
   	    Assert.assertTrue(isalertpresent,"catogory and subcategory is not addded");
 	  

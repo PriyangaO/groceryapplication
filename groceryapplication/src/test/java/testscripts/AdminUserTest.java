@@ -11,21 +11,20 @@ import pages.LoginPage;
 
 public class AdminUserTest extends BaseClass{
 	LoginPage login; 
+	HomePage home;
+	AdminUser adminn;
   @Test
   public void verifingToAddUser()
   {
 	    login= new LoginPage(driver);
-		login.enterUserNameOnUserName("admin");
-		login.enterPasswordOnPasswordField("admin");
-		login.clickOnLoginButton();
-		HomePage home= new HomePage(driver);
-		home.clickOnAdminUsers();
+	home=	login.enterUserNameOnUserName("admin")
+			.enterPasswordOnPasswordField("admin").clickOnLoginButton();
+		
+		
+    adminn=	home.clickOnAdminUsers().clickOnNew()
+.clickOnUserName().clickOnPassword().clickOnUserType().clickOnCreate();
 	    AdminUser user=new AdminUser(driver);
-		user.clickOnNew();
-		user.clickOnUserName();
-		user.clickOnPassword();
-		user.clickOnUserType();
-		user.clickOnCreate();
+		
 		boolean isalertpresent= user.isAlertShown();
 	  	Assert.assertTrue(isalertpresent,"AdminUser not created succussfully");
 	  
@@ -37,14 +36,12 @@ public class AdminUserTest extends BaseClass{
 public void verifyToEditUsers()
 {
 	login= new LoginPage(driver);
-	login.enterUserNameOnUserName("admin");
-  login.enterPasswordOnPasswordField("admin");
-	login.clickOnLoginButton();
-	HomePage home= new HomePage(driver);
-	home.clickOnAdminUsers();
+home=	login.enterUserNameOnUserName("admin").enterPasswordOnPasswordField("admin").clickOnLoginButton();
+     
+
+ adminn=	home.clickOnAdminUsers().clickOnEdit().clickOnUpdate();
     AdminUser user=new AdminUser(driver);
-    user.clickOnEdit();
-    user.clickOnUpdate();
+    
     boolean isalertpresent= user.isAlertShown();
   	Assert.assertTrue(isalertpresent,"Adminuser not updated succussfully");
 	
@@ -56,13 +53,13 @@ public void verifyToEditUsers()
 public void verifyToDeleteUsers()
 {
 	login= new LoginPage(driver);
-	login.enterUserNameOnUserName("admin");
-    login.enterPasswordOnPasswordField("admin");
-	login.clickOnLoginButton();
+	
+home=login.enterUserNameOnUserName("admin").enterPasswordOnPasswordField("admin").clickOnLoginButton();
+    
 	HomePage home= new HomePage(driver);
-	home.clickOnAdminUsers();
+adminn=	home.clickOnAdminUsers().clickOnDelete();
 	AdminUser user=new AdminUser(driver);
-    user.clickOnDelete();
+  
     driver.switchTo().alert().accept();
     boolean isalertpresent= user.isAlertShown();
   	Assert.assertTrue(isalertpresent,"Adminuser  not deleted succussfully");
@@ -72,15 +69,12 @@ public void verifyAdminUserSearch()
 
 {
 	login= new LoginPage(driver);
-	login.enterUserNameOnUserName("admin");
-    login.enterPasswordOnPasswordField("admin");
-	login.clickOnLoginButton();
+home=login.enterUserNameOnUserName("admin").enterPasswordOnPasswordField("admin").clickOnLoginButton();
+    
 	HomePage home= new HomePage(driver);
-	home.clickOnAdminUsers();
+adminn=	home.clickOnAdminUsers().clickOnSearch().clickOnUserField().clickOnSearch();
 	AdminUser user=new AdminUser(driver);
-    user.clickOnSearch();
-    user.clickOnUserField();
-    user.clickOnUserSearch();
+    
     boolean isalertpresent= user.isSearchShown();
   	Assert.assertTrue(isalertpresent,"Adminuser not search succussfully");
 	

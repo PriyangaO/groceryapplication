@@ -34,13 +34,15 @@ public ManageNews clickOnManageNews()
 	return new ManageNews(driver);
 }
 
-public void clickOnManageProduct()
+public ManageProduct clickOnManageProduct()
 {
 	manageproduct.click();
+	return new ManageProduct(driver);
 }
 
-public void clickOnAdminUsers()
+public AdminUser clickOnAdminUsers()
 {
-	adminusers.click();;
+	adminusers.click();
+	return new AdminUser(driver);
 }
 }

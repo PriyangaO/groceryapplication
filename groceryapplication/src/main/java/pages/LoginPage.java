@@ -27,13 +27,15 @@ public class LoginPage
 	//alert message
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") WebElement alertmsg;
 	
-	public void enterUserNameOnUserName(String username)
+	public LoginPage enterUserNameOnUserName(String username)
 	{
 		usernameField.sendKeys(username);
+		return this;
 	}
-	public void enterPasswordOnPasswordField(String password)
+	public LoginPage enterPasswordOnPasswordField(String password)
 	{
 		passwordField.sendKeys(password);
+		return this;
 	}
 	public  HomePage clickOnLoginButton()
 	{
@@ -49,13 +51,14 @@ public class LoginPage
 		return alertmsg.isDisplayed();
 	}
 
-	public void loginUsingExcelData() throws IOException   // return homepage  need to add 
+	public HomePage loginUsingExcelData() throws IOException   // return homepage  need to add 
 	{
 		String username=ExcelUtility.readStringData(1, 0, "ga_loginpage");
 		String password=ExcelUtility.readStringData(1, 1, "ga_loginpage");
 		usernameField.sendKeys(username);
 		passwordField.sendKeys(password);
 		loginButton.click();
+		return new HomePage(driver);
 	}
 
 

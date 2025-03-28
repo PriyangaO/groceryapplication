@@ -35,54 +35,65 @@ public class ManageProduct
     
     
     
-  public void clickOnNew()
+  public ManageProduct clickOnNew()
   {
 	  newproduct.click();
+	  return this;
   }
- public void clickOnTitle()
+ public ManageProduct clickOnTitle()
  {
 	 title.click();
 	 title.sendKeys("Obsqura Product" );
+	 return this;
  }
     
- public void clickOnProduct()
+ public ManageProduct clickOnProduct()
  {
 	 product.click();
+	 return this;
  }
- public void clickOnTag()
+ public ManageProduct clickOnTag()
  {
 	 tag.click();
 	 tag.sendKeys("Priyanga Prakash ");
+	 return this;
  }
- public void clickOnPriceType()
+ public ManageProduct clickOnPriceType()
  {
 	price.click();
+	return this;
  }
-public void clickOnLiterValue()
+public ManageProduct clickOnLiterValue()
 {
 	litervalue.click();
 	litervalue.sendKeys("one litre");
+	return this;
 }
-public void clickOnLitreUnit()
+public ManageProduct clickOnLitreUnit()
 {
 	litreunit.click();
-    Select select = new Select(litreunit);
+    Select select = new Select(litreunit);   //correct it by using page utility
     select.selectByIndex(1);
 	WebElement selectedelement=select.getFirstSelectedOption();
     selectedelement.click();
+    return this;
 }
-public void clickOnLitrePrice()
+public ManageProduct clickOnLitrePrice()
 {
 	litreprice.click();
+	return this;
 }
-public void clickOnStockAvailablity()
+public ManageProduct clickOnStockAvailablity()
 {
 	stockavailability.click();
 	stockavailability.sendKeys("nmm");
+	return this;
+	
 }
-public void clickOnCreate()
+public ManageProduct clickOnCreate()
 {
 	create.click();
+	return this ;
 }
 public boolean isAlertShown()
 {

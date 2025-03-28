@@ -31,39 +31,46 @@ public class ManageNews {
         @FindBy(xpath="//h5[normalize-space()='Alert!']") WebElement alert;
         @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertdelete;
       
-public void clickOnNew()
+public ManageNews clickOnNew()
 {
 	newclick.click();
+	return this;
 }
 
-public void clickOnTextArea()
+public ManageNews clickOnTextArea()
 {
 	enterthenews.click();
 	enterthenews.sendKeys("Welcome to ObsquraTeam ");
+	return this;
 }
 
-public void clickOnSave()
+public ManageNews clickOnSave()
 {
 	save.click();
+	return this;
 }
-public void clickOnEdit()
+public ManageNews clickOnEdit()
 {
 	edit.click();
+	return this;
 }
-public void clickOnUpdateNews()
+public ManageNews clickOnUpdateNews()
 {
 	entertheupdatenews.click();
 	entertheupdatenews.sendKeys("\n update of any obsqura news");
+	return this;
 }
 
-public void clickOnUpddate()
+public ManageNews clickOnUpddate()
 {
 	update.click();
+	return this;
 }
 
-public void clickOnDelete()
+public ManageNews clickOnDelete()
 {
 	delete.click();
+	return this;
 }
 
 public boolean isAlertShown()

@@ -33,32 +33,37 @@ public class AdminUser {
 	@FindBy(xpath="//td[normalize-space()='dwd']") WebElement data;
 	
 	
-public void clickOnNew()
+public AdminUser clickOnNew()
 {
 	newusers.click();
+	return this;
 }
 	
-public void clickOnUserName()
+public AdminUser clickOnUserName()
 {
 	username.click();
 	username.sendKeys("Priya1289");
+	return this;
 }
 	
-public void clickOnPassword()
+public AdminUser clickOnPassword()
 {
 	password.click();
 	password.sendKeys("admin12298");
+	return this;
 	
 }
-public void clickOnUserType()
+public AdminUser clickOnUserType()
 {
 	usertype.click();
 	pageutility.selectDropdownWithVisibleText(usertype,"Staff");
+	return this;
 }
 	
-public void clickOnCreate()
+public AdminUser clickOnCreate()
 {
    create.click();
+   return this;
    
 }
 	
@@ -67,32 +72,38 @@ public boolean isAlertShown()
 	return alert.isDisplayed();
 }	
 	
-public void clickOnEdit()
+public AdminUser clickOnEdit()
 {
 	edit.click();
+	return this;
 }
 	
-public void  clickOnUpdate()
+public AdminUser  clickOnUpdate()
 {
 	update.click();
+	return this;
 }
 	
-public void clickOnDelete()
+public AdminUser clickOnDelete()
 {
 	delete.click();
+	return this;
 }
-public void clickOnSearch()
+public AdminUser clickOnSearch()
 {
 	search.click();
+	return this;
 }
-public void clickOnUserField()
+public AdminUser clickOnUserField()
 {
 	user.click();
 	user.sendKeys("dwd");
+	return this;
 }
-public void clickOnUserSearch()
+public AdminUser clickOnUserSearch()
 {
 	usersearch.click();
+	return this;
 }
 public boolean isSearchShown()
 {

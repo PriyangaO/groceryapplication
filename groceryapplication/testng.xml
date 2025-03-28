@@ -4,7 +4,10 @@
 <test name="grouptest">
 <classes>  
 <class name= "testscripts.ManageNewsTest"></class>
-<class name= ""></class>
+<class name= "testscripts.AdminUserTest"></class>
+<class name="testscripts.SubCateogoryTest"></class>
+<class name="testscripts.ManageProductTest"></class>
+<class name="testscripts.LoginTest.java"></class>
 </classes>
 </test>
 </suite>

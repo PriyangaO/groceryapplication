@@ -10,20 +10,24 @@ import pages.ManageNews;
 import pages.SubCategory;
 
 public class ManageNewsTest extends BaseClass {
-  @Test
-  public void verifyToAddNews()
+ 
+	LoginPage login; 
+	HomePage home;
+	ManageNews news;
+	
+	
+	  @Test
+      public void verifyToAddNews()
   {
   
 	    LoginPage login= new LoginPage(driver);
-		login.enterUserNameOnUserName("admin");
-		login.enterPasswordOnPasswordField("admin");
-		login.clickOnLoginButton();
+home=login.enterUserNameOnUserName("admin").enterUserNameOnUserName("admin")
+     .clickOnLoginButton();
+		
 		HomePage home= new HomePage(driver);
-        home.clickOnManageNews();
+ news= home.clickOnManageNews().clickOnNew().clickOnTextArea().clickOnSave();
         ManageNews news=new ManageNews (driver);
-        news.clickOnNew();
-        news.clickOnTextArea();
-        news.clickOnSave();
+        
         boolean isalertpresent=news.isAlertShown();
 	  	Assert.assertTrue(isalertpresent,"ManageNews not created succesfully");
   
@@ -32,15 +36,13 @@ public class ManageNewsTest extends BaseClass {
   public void verifyEditNews()
 {
 	LoginPage login= new LoginPage(driver);
-    login.enterUserNameOnUserName("admin");
-    login.enterPasswordOnPasswordField("admin");
-    login.clickOnLoginButton();
+ home=login.enterUserNameOnUserName("admin").enterPasswordOnPasswordField("admin").clickOnLoginButton();
+    
     HomePage home= new HomePage(driver);
     home.clickOnManageNews();
     ManageNews news=new ManageNews (driver);
-    news.clickOnEdit();
-    news.clickOnUpdateNews();
-    news.clickOnUpddate();
+   news=  news.clickOnEdit().clickOnUpdateNews().clickOnUpddate();
+    
     boolean isalertpresent=news.isAlertShown();
   	Assert.assertTrue(isalertpresent,"ManageNews not edited succesfully");
 }
@@ -49,13 +51,12 @@ public class ManageNewsTest extends BaseClass {
   public void verifyTheNewsDelete()
   {
 	    LoginPage login= new LoginPage(driver);
-	    login.enterUserNameOnUserName("admin");
-	    login.enterPasswordOnPasswordField("admin");
-	    login.clickOnLoginButton();
+	 home= login.enterUserNameOnUserName("admin").enterPasswordOnPasswordField("admin").clickOnLoginButton();
+	    
 	    HomePage home= new HomePage(driver);
-	    home.clickOnManageNews();
+	news= home.clickOnManageNews().clickOnDelete();
 	    ManageNews news=new ManageNews (driver);
-	    news.clickOnDelete();
+	   
 	    driver.switchTo().alert().accept();
 	    boolean isalertdeletepresent= news.isAlertDeleteShown();
 	  	Assert.assertTrue(isalertdeletepresent,"ManageNews not deleted succesfully");
