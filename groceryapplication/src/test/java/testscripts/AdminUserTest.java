@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.BaseClass;
+import constants.Constants;
 import pages.AdminUser;
 import pages.HomePage;
 import pages.LoginPage;
@@ -26,7 +27,7 @@ public class AdminUserTest extends BaseClass{
 	    AdminUser user=new AdminUser(driver);
 		
 		boolean isalertpresent= user.isAlertShown();
-	  	Assert.assertTrue(isalertpresent,"AdminUser not created succussfully");
+	  	Assert.assertTrue(isalertpresent,Constants.ip_verifingToAddUser);
 	  
 	  
   }
@@ -43,7 +44,7 @@ home=	login.enterUserNameOnUserName("admin").enterPasswordOnPasswordField("admin
     AdminUser user=new AdminUser(driver);
     
     boolean isalertpresent= user.isAlertShown();
-  	Assert.assertTrue(isalertpresent,"Adminuser not updated succussfully");
+  	Assert.assertTrue(isalertpresent,Constants.ip_verifyToEditUsers);
 	
 	
 }
@@ -62,7 +63,7 @@ adminn=	home.clickOnAdminUsers().clickOnDelete();
   
     driver.switchTo().alert().accept();
     boolean isalertpresent= user.isAlertShown();
-  	Assert.assertTrue(isalertpresent,"Adminuser  not deleted succussfully");
+  	Assert.assertTrue(isalertpresent,Constants.ip_verifyToDeleteUsers);
 }
 @Test
 public void verifyAdminUserSearch()
@@ -76,7 +77,7 @@ adminn=	home.clickOnAdminUsers().clickOnSearch().clickOnUserField().clickOnSearc
 	AdminUser user=new AdminUser(driver);
     
     boolean isalertpresent= user.isSearchShown();
-  	Assert.assertTrue(isalertpresent,"Adminuser not search succussfully");
+  	Assert.assertTrue(isalertpresent,Constants.ip_verifyAdminUserSearch);
 	
 	
 }

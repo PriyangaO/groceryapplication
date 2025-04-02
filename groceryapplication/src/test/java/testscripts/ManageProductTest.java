@@ -29,7 +29,7 @@ public class ManageProductTest extends BaseClass {
         ManageProduct product=new ManageProduct (driver);
        
         boolean isalertpresent= product.isAlertShown();
-  	    Assert.assertTrue(isalertpresent,"catogory and subcategory is not addded");
+  	    Assert.assertTrue(isalertpresent,Constants.ip_verifyToAddManageProduct);
 	  
 	  
 	  

@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.BaseClass;
+import constants.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNews;
@@ -29,7 +30,7 @@ home=login.enterUserNameOnUserName("admin").enterUserNameOnUserName("admin")
         ManageNews news=new ManageNews (driver);
         
         boolean isalertpresent=news.isAlertShown();
-	  	Assert.assertTrue(isalertpresent,"ManageNews not created succesfully");
+	  	Assert.assertTrue(isalertpresent,Constants.ip_verifyToAddNews);
   
   }
   @Test
@@ -44,7 +45,7 @@ home=login.enterUserNameOnUserName("admin").enterUserNameOnUserName("admin")
    news=  news.clickOnEdit().clickOnUpdateNews().clickOnUpddate();
     
     boolean isalertpresent=news.isAlertShown();
-  	Assert.assertTrue(isalertpresent,"ManageNews not edited succesfully");
+  	Assert.assertTrue(isalertpresent,Constants.ip_verifyEditNews);
 }
   @Test
   
@@ -59,7 +60,7 @@ home=login.enterUserNameOnUserName("admin").enterUserNameOnUserName("admin")
 	   
 	    driver.switchTo().alert().accept();
 	    boolean isalertdeletepresent= news.isAlertDeleteShown();
-	  	Assert.assertTrue(isalertdeletepresent,"ManageNews not deleted succesfully");
+	  	Assert.assertTrue(isalertdeletepresent,Constants.ip_verifyTheNewsDelete);
   
   }
    

@@ -32,6 +32,17 @@ public class WaitUtility
 
 	}
 
+	public void elementToBeClickable(WebDriver driver,WebElement element) 
+	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	public void invisibilityOfAnElement(WebDriver driver,WebElement element) 
+	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOf(element));
+	}
+		
     public void implicitWait(WebDriver driver)
 {
 	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
